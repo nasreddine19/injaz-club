@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaInstagram ,  FaTiktok } from "react-icons/fa";
 import { FcAbout } from "react-icons/fc";
 const SocialMediaLinks = () => {
@@ -27,12 +28,12 @@ const SocialMediaLinks = () => {
   return (
     <div className='m-4 w-full p-6'>
         {socialLinks.map(({platform, link, icon}) => (
-        <a 
+        <Link 
         key={platform}
-        href={link}
-        className='flex items-center justify-center gap-2 p-3 my-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors'> 
+        to={link}
+        className="flex items-center justify-center gap-2 p-3 my-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition-colors">
         {icon} <span>{platform}</span>
-        </a>
+        </Link>
         ))}
     </div>
   )
